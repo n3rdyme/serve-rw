@@ -1,0 +1,35 @@
+{
+  "name": "serve-rw",
+  "version": "1.0.0",
+  "description": "A simple http file server that also allows PUT and DELETE operations",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js --directory ./files",
+    "watch": "node --watch src/index.js --directory ./files",
+    "test": "echo success"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/n3rdyme/serve-rw"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "n3rdy.me",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/n3rdyme/serve-rw/issues"
+  },
+  "homepage": "https://github.com/n3rdyme/serve-rw#readme",
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "commander": "^12.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "mime-types": "^2.1.35"
+  }
+}

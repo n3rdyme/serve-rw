@@ -32,6 +32,11 @@ function generateDirectoryListing(dirPath, relativePath) {
     let items = fs.readdirSync(dirPath);
     let parentPath = relativePath !== '/' ? path.dirname(relativePath) : null;
 
+    const found = items.find((name) => name === "index.html" || name === "index.htm");
+    if (found) {
+        return fs.readFileSync(path.join(dirPath, found)).toString('utf-8');
+    }
+
     let html = '<html><body><h1>Directory Listing</h1><ul>';
     if (parentPath) {
         html += `<li><a href="${parentPath === '.' ? '/' : parentPath}">.. (parent directory)</a></li>`;
@@ -63,6 +68,7 @@ app.get('/*', (req, res) => {
             // If it's a directory, serve an HTML page listing its contents
             try {
                 const html = generateDirectoryListing(filePath, req.path);
+                res.setHeader('Content-Type', 'text/html');
                 res.status(200).send(html);
             } catch (err) {
                 handleError(res, err);

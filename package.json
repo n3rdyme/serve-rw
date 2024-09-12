@@ -23,8 +23,12 @@
   },
   "homepage": "https://github.com/n3rdyme/serve-rw#readme",
   "files": [
+    "bin",
     "src"
   ],
+  "bin": {
+    "serve-rw": "./bin/serve-rw.js"
+  },
   "dependencies": {
     "body-parser": "^1.20.3",
     "commander": "^12.1.0",

@@ -87,6 +87,7 @@ app.get('/*', (req, res) => {
 
 // Handle file uploads via PUT
 app.put('/*', (req, res) => {
+    console.log(`PUT ${req.path}`);
     let filePath = path.join(rootDirectory, req.path);
 
     // Create directories if they don't exist
@@ -104,6 +105,7 @@ app.put('/*', (req, res) => {
 
 // Handle file deletion via DELETE
 app.delete('/*', (req, res) => {
+    console.log(`DEL ${req.path}`);
     let filePath = path.join(rootDirectory, req.path);
 
     // Check if the file exists

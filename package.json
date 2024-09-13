@@ -25,7 +25,8 @@
   "homepage": "https://github.com/n3rdyme/serve-rw#readme",
   "files": [
     "bin",
-    "src"
+    "src",
+    "LICENSE"
   ],
   "bin": {
     "serve-rw": "./bin/serve-rw.js"

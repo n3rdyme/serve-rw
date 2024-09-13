@@ -117,7 +117,3 @@ Find this project on GitHub: [n3rdyme/serve-rw](https://github.com/n3rdyme/serve
 ---
 
 Now you can easily expose directories over HTTP with full read-write capabilities using **serve-rw**. Happy serving!
-
---- 
-
-Feel free to update any links or additional information as needed!

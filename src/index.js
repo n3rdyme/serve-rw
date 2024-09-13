@@ -95,12 +95,13 @@ app.put('/*', (req, res) => {
     fs.mkdirSync(dir, { recursive: true });
 
     // Write the file
-    fs.writeFile(filePath, req.body, (err) => {
-        if (err) {
-            return handleError(res, err);
-        }
-        res.status(200).send('File uploaded successfully');
+    const writeStream = fs.createWriteStream(filePath);
+    writeStream.on('error', (err) => handleError(res, err));
+    writeStream.on('finish', () => {
+        res.status(204).send();
     });
+
+    req.pipe(writeStream);
 });
 
 // Handle file deletion via DELETE
